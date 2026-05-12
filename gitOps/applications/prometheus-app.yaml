@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/skalyandev/devOps-playBook.git
     targetRevision: gitops-dev
-    path: monitoring/prometheus
+    path: gitOps/monitoring/prometheus
 
   destination:
     server: https://kubernetes.default.svc
