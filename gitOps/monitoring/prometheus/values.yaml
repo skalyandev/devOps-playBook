@@ -29,15 +29,9 @@ commonLabels: {}
 # myLabel: aakkmd
 
 
-prometheus-node-exporter:
-  hostRootFsMount:
-    enabled: false
+hostRootFsMount:
+  enabled: false
 
-  extraArgs:
-    - --path.procfs=/host/proc
-    - --path.sysfs=/host/sys
-    - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|run/containerd/.+|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
-    - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|mqueue|proc|pstore|securityfs|sysfs|tracefs)$
 ## Install Prometheus Operator CRDs
 ##
 crds:
@@ -5009,7 +5003,7 @@ thanosRuler:
 
     ## Service type
     ##
-    type: ClusterIP
+    type: NodePort
 
   ## Configuration for creating a ServiceMonitor for the ThanosRuler service
   ##
