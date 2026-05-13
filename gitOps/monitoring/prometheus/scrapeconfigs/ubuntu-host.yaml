@@ -1,0 +1,11 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ScrapeConfig
+metadata:
+  name: ubuntu-host-node-exporter
+  namespace: ns-mbl-monitoring
+  labels:
+    release: prometheus
+spec:
+  staticConfigs:
+    - targets:
+        - 172.21.213.131:9100
